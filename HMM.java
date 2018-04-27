@@ -69,11 +69,11 @@ public class HMM {
             probabilityHH = probabilityH;
             
             probabilityH=(a[1][1] * b[0][value-1]) *probabilityH + (a[2][1] *b[0][value-1])* probabilityC;
-            probabilityC= probability1C*a[2][2] +probability1H *a[2][1] + probability2C *a[2][2] +probability2H *a[1][2] ;
-            probability1C = probability1C*a[2][2];
-            probability1H = probability1H *a[2][1];
-            probability2C = probability2C *a[2][2];
-            probability2H = probability2H *a[1][2];
+            probabilityC= a[2][2]*b[1][value-1]*probability1C +  a[2][2]*b[1][value-1]*probability2C + a[2][1]*b[1][value-1]*probability1H + a[1][2]*b[1][value-1]*probability2H ;
+            probability1C = a[2][2]*b[1][value-1]*probability1C;
+            probability1H = a[2][1]*b[1][value-1]*probability1H;
+            probability2C = a[2][2]*b[1][value-1]*probability2C;
+            probability2H = a[1][2]*b[1][value-1]*probability2H;
         
         }
         
